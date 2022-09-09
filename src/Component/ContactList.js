@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Button } from "semantic-ui-react";
 
-const ContactList = ({ Datas }) => {
-  //   const [username, password] = Datas;
-  //   const RenderData = DefaultDatas.DefaultDatas.map((un) => {});
+const ContactList = ({ data }) => {
   return (
-    <section>
-      {Datas.map((data) => {
-        const { username, password, id } = data;
+    <section className="block">
+      {data.map((item, index) => {
+        const { username, password } = item;
         return (
-          <div key={id}>
-            <p>{username}</p>
-            <p>{password}</p>
-            <br />
+          <div className="dialog" key={index}>
+            <div>
+              <p>{username}</p>
+              <p>{password}</p>
+            </div>
+            <Button className="removeItem">remove</Button>
           </div>
         );
       })}

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ContactList from "./Component/ContactList";
 import Header from "./Component/Header";
 
@@ -14,10 +15,13 @@ function App() {
       password: "guoran88",
     },
   ];
+
+  const [data, setData] = useState(Datas);
+
   return (
     <div className="App">
-      <Header />
-      <ContactList Datas={Datas} />
+      <Header data={data} setData={setData} />
+      <ContactList data={data} />
     </div>
   );
 }
