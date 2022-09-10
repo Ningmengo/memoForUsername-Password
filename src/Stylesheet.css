@@ -62,3 +62,22 @@
   width: 80px;
   border: 2px solid black;
 }
+
+.counter {
+  display: flex;
+  border: 2px solid black;
+  text-align: center;
+  justify-content: center;
+  height: 200px;
+  padding-top: 40px;
+}
+.lbl {
+  width: 30px;
+  font-size: 30px;
+  margin: 30px;
+  transform: translateY(-15px);
+}
+
+.btn {
+  height: 50px;
+}

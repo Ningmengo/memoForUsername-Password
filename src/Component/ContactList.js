@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Button } from "semantic-ui-react";
 
 const ContactList = ({ data }) => {
+  const removeData = () => {};
+
   return (
     <section className="block">
       {data.map((item, index) => {
@@ -12,7 +14,9 @@ const ContactList = ({ data }) => {
               <p>{username}</p>
               <p>{password}</p>
             </div>
-            <Button className="removeItem">remove</Button>
+            <Button className="removeItem" onClick={removeData}>
+              remove
+            </Button>
           </div>
         );
       })}

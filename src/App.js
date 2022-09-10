@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactList from "./Component/ContactList";
 import Header from "./Component/Header";
+import Counter from "./Component/Counter";
 
 function App() {
   const Datas = [
@@ -22,6 +23,7 @@ function App() {
     <div className="App">
       <Header data={data} setData={setData} />
       <ContactList data={data} />
+      <Counter />
     </div>
   );
 }

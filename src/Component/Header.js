@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "semantic-ui-react";
 import { Divider, Form, Label } from "semantic-ui-react";
 import "../../src/Stylesheet.css";
@@ -6,6 +6,13 @@ import "../../src/Stylesheet.css";
 export const Header = ({ data, setData }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const testRef = useRef(null);
+
+  useEffect(() => {
+    //useRef to do the focus of the input
+    testRef.current.focus();
+    console.log(username);
+  }, []);
 
   const handleClick = () => {
     const newData = {
@@ -29,6 +36,7 @@ export const Header = ({ data, setData }) => {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              ref={testRef}
             />
 
             <Label pointing>Please enter a Username</Label>
