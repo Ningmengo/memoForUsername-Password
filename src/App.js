@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header data={data} setData={setData} />
-      <ContactList data={data} />
+      <ContactList data={data} setData={setData} />
       <Counter />
     </div>
   );

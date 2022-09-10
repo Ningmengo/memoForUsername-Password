@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import { Button } from "semantic-ui-react";
 
-const ContactList = ({ data }) => {
-  const removeData = () => {};
+//This is where the username&&password are displayed
+
+const ContactList = ({ data, setData }) => {
+  const DeleteData = (id) => {
+    const newData = data.filter((singleElement) => singleElement.id !== id);
+    setData(newData);
+  };
 
   return (
     <section className="block">
@@ -14,7 +19,7 @@ const ContactList = ({ data }) => {
               <p>{username}</p>
               <p>{password}</p>
             </div>
-            <Button className="removeItem" onClick={removeData}>
+            <Button className="removeItem" onClick={() => DeleteData(item.id)}>
               remove
             </Button>
           </div>
